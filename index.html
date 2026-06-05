@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>AI100 Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 100일 챌린지 시스템</title>
+    <!-- 마크다운을 예쁘게 렌더링해주는 라이브러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
+        @media (max-width: 767px) { body { padding: 15px; } }
+    </style>
 </head>
 <body>
+    <div id="content" class="markdown-body">
+        <!-- 이 아래 공간에 원래 원본 텍스트 내용을 그대로 두시면 됩니다 -->
 
 # AI 100일 챌린지 시스템 — 핵심 구현 코드
 
@@ -492,5 +502,11 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: '--prod'
 ```
+</div>
+    <script>
+        // 내부 텍스트를 마크다운으로 변환하여 화면에 뿌려주는 스크립트
+        const contentDiv = document.getElementById('content');
+        contentDiv.innerHTML = marked.parse(contentDiv.innerHTML);
+    </script>
 </body>
 </html>
